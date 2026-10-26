@@ -1,0 +1,4 @@
+# Install current compatible releases on Codespace creation/start.
+# For reproducible production deployments, pin tested versions later.
+gradio
+openai

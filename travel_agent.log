@@ -1,0 +1,48 @@
+2026-10-26 12:55:31,222 ERROR Travel research failed
+Traceback (most recent call last):
+  File "/workspaces/agent-shell/app.py", line 25, in chat
+    return reply(message, history)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 1, in <lambda>
+  File "<string>", line 1, in <genexpr>
+ValueError: diagnostic test
+2026-10-26 12:56:53,882 ERROR Travel research failed
+Traceback (most recent call last):
+  File "/workspaces/agent-shell/app.py", line 25, in chat
+    return reply(message, history)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/agent-shell/harness/agent.py", line 14, in reply
+    criteria = criteria_for(client, model, message, history, memory)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/agent-shell/harness/flights.py", line 8, in criteria_for
+    response = client.responses.create(model=model,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1054, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.12/site-packages/openai/_base_client.py", line 1474, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.12/site-packages/openai/_base_client.py", line 1247, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Unknown parameter: 'input[1].options'.", 'type': 'invalid_request_error', 'param': 'input[1].options', 'code': 'unknown_parameter'}}
+2026-10-26 13:01:08,756 ERROR Travel research failed
+Traceback (most recent call last):
+  File "/workspaces/agent-shell/app.py", line 25, in chat
+    return reply(message, history)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/agent-shell/harness/agent.py", line 20, in reply
+    criteria = criteria_for(client, model, message, history, memory)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspaces/agent-shell/harness/flights.py", line 8, in criteria_for
+    response = client.responses.create(model=model,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.12/site-packages/openai/resources/responses/responses.py", line 1054, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.12/site-packages/openai/_base_client.py", line 1474, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vscode/.local/lib/python3.12/site-packages/openai/_base_client.py", line 1247, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid value: 'text'. Supported values are: 'input_text', 'input_image', 'input_audio', 'output_text', 'refusal', 'input_file', 'computer_screenshot', 'summary_text', and 'encrypted_content'.", 'type': 'invalid_request_error', 'param': 'input[1].content[0].type', 'code': 'invalid_value'}}
